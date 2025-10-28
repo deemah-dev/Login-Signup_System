@@ -19,8 +19,7 @@ input validation, error handling, and a lock mechanism after multiple failed log
 
 ## 📂 File Structure
 
-User data is stored in:
-C:\Users\user\source\repos\LoginProjectWinForm\LoginFile.txt
+User data is stored in: LoginFile.txt
 Each line in the file represents one user, stored as:
 FirstName#//#LastName#//#Username#//#Password
 
@@ -40,11 +39,11 @@ When you click **Sign Up**, the system:
 🖼️ **UI Example — Sign Up Success Message:**  
 ![Sign Up Screen](ProgectImages/SuccessSignUpScreen.png)
 
-###🔸 Login
+### 🔸 Login
 When you click **Login**, the system:
-1. Reads all lines from `LoginFile.txt`.
-2. Looks for a match between the username and password.
-3. If found → shows success message.
+1. Reads all lines from `LoginFile.txt`.  
+2. Looks for a match between the **username** and **password**.  
+3. If found → shows success message.  
    If not found → increases failed attempts counter.
 
 🖼️ **UI Example — Login Screen:**  
