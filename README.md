@@ -19,7 +19,7 @@ input validation, error handling, and a lock mechanism after multiple failed log
 
 ## 📂 File Structure
 
-User data is stored in: LoginFile.txt
+User data is stored in: `LoginFile.txt`
 Each line in the file represents one user, stored as:
 FirstName#//#LastName#//#Username#//#Password
 
