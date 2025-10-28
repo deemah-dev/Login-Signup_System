@@ -1,0 +1,13 @@
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSystemWinForm.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSystemWinForm.Form1.resources
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSystemWinForm.Properties.Resources.resources
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSystemWinForm.csproj.GenerateResource.cache
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSystemWinForm.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\bin\Debug\LoginSystemWinForm.exe.config
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\bin\Debug\LoginSystemWinForm.exe
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\bin\Debug\LoginSystemWinForm.pdb
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\bin\Debug\ReaLTaiizor.dll
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\bin\Debug\ReaLTaiizor.xml
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSys.4CDA9B62.Up2Date
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSystemWinForm.exe
+C:\Users\user\source\repos\LoginSystemWinForm\LoginSystemWinForm\obj\Debug\LoginSystemWinForm.pdb
