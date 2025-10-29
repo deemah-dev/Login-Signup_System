@@ -13,7 +13,7 @@ namespace LoginSystemWinForm
 {
     public partial class Form1 : Form
     {
-        private string path = "C:\\Users\\user\\source\\repos\\LoginProjectWinForm\\LoginFile.txt";
+        private string path = "C:\\Users\\user\\source\\repos\\LoginSystemWinForm\\LoginSystemWinForm\\LoginFile.txt";
         private byte CountFailedTries = 0;
         private byte SecondCounter = 0;
         public Form1()
@@ -41,6 +41,19 @@ namespace LoginSystemWinForm
             ValidateTextBox(sender, e);
         }
 
+        private string EncryptText(string Text)
+        {
+            var sb = new StringBuilder(Text.Length);
+            foreach (char letter in Text)
+                sb.Append((char)((byte)letter + 5));
+            return sb.ToString();
+        }
+
+        private string GetPasswordEncrypted()
+        {
+            return EncryptText(txtbSignPassword.Text);
+        }
+
         private void StoreUserInFile()
         {
             using (var sw = new StreamWriter(path, true))
@@ -48,7 +61,7 @@ namespace LoginSystemWinForm
                 sw.Write(txtbSignFirstName.Text + "#//#");
                 sw.Write(txtbSignLastName.Text + "#//#");
                 sw.Write(txtbSignUsername.Text + "#//#");
-                sw.Write(txtbSignPassword.Text);
+                sw.Write(GetPasswordEncrypted());
                 sw.WriteLine();
             }
         }
@@ -88,6 +101,19 @@ namespace LoginSystemWinForm
                 txtbLoginPassword.UseSystemPasswordChar = true;
         }
 
+        private string DecryptText(string Text)
+        {
+            var sb = new StringBuilder(Text.Length);
+            foreach (var letter in Text)
+                sb.Append((char)((byte)letter - 5));
+            return sb.ToString();
+        }
+
+        private string GetPasswordDecrypted()
+        {
+            return DecryptText(txtbSignPassword.Text);
+        }
+
         private bool FindUser()
         {
             string[] Lines = File.ReadAllLines(path);
@@ -95,7 +121,7 @@ namespace LoginSystemWinForm
             {
                 if (line.Contains(txtbLoginUsername.Text))
                 {
-                    if (line.Contains(txtbLoginPassword.Text))
+                    if (line.Contains(GetPasswordDecrypted()))
                         return true;
                 }
             }

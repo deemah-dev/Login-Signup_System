@@ -44,6 +44,7 @@
             this.txtbSignFirstName = new System.Windows.Forms.TextBox();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.tabPLogIn = new System.Windows.Forms.TabPage();
+            this.LblLockScreenMessage = new System.Windows.Forms.Label();
             this.btnRestartLogin = new System.Windows.Forms.Button();
             this.btnShowLoginPassword = new System.Windows.Forms.Button();
             this.txtbLoginPassword = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.txtbLoginUsername = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.LblLockScreenMessage = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPSignUp.SuspendLayout();
@@ -252,6 +252,16 @@
             this.tabPLogIn.Text = "Log In";
             this.tabPLogIn.Leave += new System.EventHandler(this.tabPLogIn_Leave);
             // 
+            // LblLockScreenMessage
+            // 
+            this.LblLockScreenMessage.AutoSize = true;
+            this.LblLockScreenMessage.Font = new System.Drawing.Font("Lucida Calligraphy", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLockScreenMessage.ForeColor = System.Drawing.Color.Red;
+            this.LblLockScreenMessage.Location = new System.Drawing.Point(101, 136);
+            this.LblLockScreenMessage.Name = "LblLockScreenMessage";
+            this.LblLockScreenMessage.Size = new System.Drawing.Size(0, 17);
+            this.LblLockScreenMessage.TabIndex = 29;
+            // 
             // btnRestartLogin
             // 
             this.btnRestartLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -349,16 +359,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // LblLockScreenMessage
-            // 
-            this.LblLockScreenMessage.AutoSize = true;
-            this.LblLockScreenMessage.Font = new System.Drawing.Font("Lucida Calligraphy", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLockScreenMessage.ForeColor = System.Drawing.Color.Red;
-            this.LblLockScreenMessage.Location = new System.Drawing.Point(101, 136);
-            this.LblLockScreenMessage.Name = "LblLockScreenMessage";
-            this.LblLockScreenMessage.Size = new System.Drawing.Size(0, 17);
-            this.LblLockScreenMessage.TabIndex = 29;
             // 
             // timer1
             // 
