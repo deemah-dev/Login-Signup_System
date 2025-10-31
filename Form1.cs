@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Extentions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,6 @@ namespace LoginSystemWinForm
 {
     public partial class Form1 : Form
     {
-        private string path = "C:\\Users\\user\\source\\repos\\LoginSystemWinForm\\LoginSystemWinForm\\LoginFile.txt";
         private byte CountFailedTries = 0;
         private byte SecondCounter = 0;
         public Form1()
@@ -41,34 +41,9 @@ namespace LoginSystemWinForm
             ValidateTextBox(sender, e);
         }
 
-        private string EncryptText(string Text)
-        {
-            var sb = new StringBuilder(Text.Length);
-            foreach (char letter in Text)
-                sb.Append((char)((byte)letter + 5));
-            return sb.ToString();
-        }
-
-        private string GetPasswordEncrypted()
-        {
-            return EncryptText(txtbSignPassword.Text);
-        }
-
-        private void StoreUserInFile()
-        {
-            using (var sw = new StreamWriter(path, true))
-            {
-                sw.Write(txtbSignFirstName.Text + "#//#");
-                sw.Write(txtbSignLastName.Text + "#//#");
-                sw.Write(txtbSignUsername.Text + "#//#");
-                sw.Write(GetPasswordEncrypted());
-                sw.WriteLine();
-            }
-        }
-
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            StoreUserInFile();
+            LoginSystem.StoreUserInFile(txtbSignFirstName.Text, txtbSignLastName.Text, txtbSignUsername.Text, txtbSignPassword.Text);
             MessageBox.Show("Sign Up Done Successfully", "Sign Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -101,36 +76,9 @@ namespace LoginSystemWinForm
                 txtbLoginPassword.UseSystemPasswordChar = true;
         }
 
-        private string DecryptText(string Text)
-        {
-            var sb = new StringBuilder(Text.Length);
-            foreach (var letter in Text)
-                sb.Append((char)((byte)letter - 5));
-            return sb.ToString();
-        }
-
-        private string GetPasswordDecrypted()
-        {
-            return DecryptText(txtbSignPassword.Text);
-        }
-
-        private bool FindUser()
-        {
-            string[] Lines = File.ReadAllLines(path);
-            foreach (var line in Lines)
-            {
-                if (line.Contains(txtbLoginUsername.Text))
-                {
-                    if (line.Contains(GetPasswordDecrypted()))
-                        return true;
-                }
-            }
-            return false;
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool IsFoundUser = FindUser();
+            bool IsFoundUser = LoginSystem.FindUser(txtbLoginUsername.Text, txtbLoginPassword.Text);
             if (IsFoundUser)
                 MessageBox.Show("Login Done Successfully", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else

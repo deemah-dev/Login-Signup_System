@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Extentions">
+      <HintPath>..\..\BankSystemWinForm\Extentions\obj\Debug\Extentions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ReaLTaiizor">
       <HintPath>..\..\..\..\.nuget\packages\realtaiizor\3.8.1.3\lib\net48\ReaLTaiizor.dll</HintPath>
@@ -57,6 +60,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginSystem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
